@@ -1,0 +1,112 @@
+{% extends 'radmin/base.html' %}
+{% load static %}
+  
+
+{% block content %}	
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Examinations</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>title</th>
+                      <th>Exam(id)</th>
+                      <th>Batch</th>
+                      <th>Duration(Minutes)</th>
+                      <th>Status</th>
+                      <th>Edit</th>
+                      <th>Share Exam Link</th>
+                      <th>Share Result Link</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% if exams %}
+                      {% for item in exams %}
+                      <tr>
+                        <td>#</td>
+                        <td>
+                            <a href="{% url 'exam:edit_exam' item.id %}">
+                              {{ item.title }}
+                            </a>
+                        </td>
+                        <td>
+                          <div>
+                            <a href="{% url 'exam:edit_exam' item.id %}">
+                              {{ item.exam_type }}({{ item.exam_slug }})
+                            </a>
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            <a href="{% url 'exam:edit_exam' item.id %}">
+                              {{ item.batch }}
+                            </a>
+                          </div>
+                        </td>
+                        <td>
+                            <a href="{% url 'exam:edit_exam' item.id %}">
+                              {{ item.duration }}
+                            </a>
+                        </td>
+                        <td>
+                          <span class="badge bg-danger">
+                            <a href="{% url 'exam:edit_exam' item.id %}">
+                              {{ item.status }}
+                            </a>
+                          </span>
+                        </td>
+                        <td>
+                            <a href="{% url 'exam:edit_exam' item.id %}">
+                              Edit
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{% url 'main:exam_login' item.exam_slug item.id %}">
+                             Share Exam Link
+                            </a>
+                             <input type="text" value="{% url 'main:exam_login' item.exam_slug item.id %}">
+                        </td>
+                        <td>
+                            <a href="{% url 'main:result_checker' item.exam_slug %}">
+                             Share Result Link
+                            </a>
+                            <input type="text" value="{% url 'main:result_checker' item.exam_slug %}">
+                        </td>
+                      </tr>
+                      {% endfor %}
+
+                    {% else %}
+                      <tr>
+                        <td>#</td>
+                        <td>Sorry, Nothing Yet!</td>
+                        <td>
+                          <div class="progress progress-xs">
+                            
+                          </div>
+                        </td>
+                        <td><span class="badge bg-danger"></span></td>
+                      </tr>
+
+                    {% endif %}
+
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- /.card -->
+          </div>
+
+
+
+        </div>
+            
+{% endblock content %}

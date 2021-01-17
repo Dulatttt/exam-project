@@ -1,0 +1,77 @@
+{% extends 'radmin/base.html' %}
+{% load static %}
+  
+
+{% block content %}	
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Your Tenants</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Names</th>
+                      <th>Status</th>
+                      <th style="width: 40px">Tenant IDs</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% if tenants %}
+                      {% for item in tenants %}
+                      <tr>
+                        <td>#</td>
+                        <td>
+                            <a href="{% url 'client:tenant_detail' item.tenant_id %}">
+                              {{ item.full_name }}
+                            </a>
+                        </td>
+                        <td>
+                          <div>
+                            <a href="{% url 'client:tenant_detail' item.tenant_id %}">
+                              {{ item.status }}
+                            </a>
+                          </div>
+                        </td>
+                        <td><span class="badge bg-danger">
+                          <a href="{% url 'client:tenant_detail' item.tenant_id %}">
+                            {{ item.tenant_id }}
+                          </a>
+                        </span></td>
+                      </tr>
+                      {% endfor %}
+
+                    {% else %}
+                      <tr>
+                        <td>#</td>
+                        <td>Sorry, Nothing Yet!</td>
+                        <td>
+                          <div class="progress progress-xs">
+                            
+                          </div>
+                        </td>
+                        <td><span class="badge bg-danger"></span></td>
+                      </tr>
+
+                    {% endif %}
+
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- /.card -->
+          </div>
+
+
+
+        </div>
+            
+{% endblock content %}

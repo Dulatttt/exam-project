@@ -1,0 +1,93 @@
+{% extends 'radmin/base.html' %}
+{% load static %}
+  
+
+{% block content %}
+
+                   
+                    <form method="post" enctype="multipart/form-data">
+                    	{% csrf_token %}
+                        <div class="row">
+                        
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="card" style="border-radius: 30px;">
+                                    <div class="card-header">Mark Exam</div>
+                                    <div class="card-body">
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Student:</label>
+                                                    <small>{{ result.student.name }}({{ result.student.reg_no }})</small>
+                                            </div>
+                                            <div class="form-group has-success">
+                                                <label for="cc-name" class="control-label mb-1">Current Score:</label>
+                                                <small>{{ result.score }}/{{ result.total }}({{ result.percentage }})%</small>
+                                            </div>
+                                            <div class="form-group has-success">
+                                                <label for="cc-name" class="control-label mb-1">Answer(s) to Nomination Form:</label>
+                                                <br />
+                                                <small><b>Name:</b> {{ response_nf.name_one }}</small><br />
+                                                <small><b>Phone:</b> {{ response_nf.phone_one }}</small><br />
+                                                <small><b>Qualification:</b> {{ response_nf.qualification_one }}</small><br />
+                                                <small><b>Residental State:</b> {{ response_nf.residental_state_one }}</small>
+                                                <hr>
+                                                <br />
+                                                <small><b>Name:</b> {{ response_nf.name_two }}</small><br />
+                                                <small><b>Phone:</b> {{ response_nf.phone_two }}</small><br />
+                                                <small><b>Qualification:</b> </small>{{ response_nf.qualification_two }}</small><br />
+                                                <small><b>Residental State:</b> {{ response_nf.residental_state_two }}</small>
+                                                <hr>
+                                                <br />
+                                                <small><b>Name:</b> {{ response_nf.name_two }}</small><br />
+                                                <small><b>Phone:</b> {{ response_nf.phone_two }}</small><br />
+                                                <small><b>Qualification:</b> {{ response_nf.qualification_two }}</small><br />
+                                                <small><b>Residental State:</b> {{ response_nf.residental_state_two }}</small>
+                                                <hr>
+                                            </div>
+                                            <br />
+                                            <div class="form-group has-success">
+                                                <label for="cc-name" class="control-label mb-1">Answer(s) to theory question:</label>
+                                                <br />
+                                                <small>{{ result.response_theory }}</small>
+                                            </div>
+                                            <br />
+                                            <div class="form-group has-success">
+                                                <label for="cc-name" class="control-label mb-1">Give your score for this Student(For Theory, Nomination Form and Attendance only!):</label>
+                                                <input id="cc-name" name="given_nomination_score" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter your phone"
+                                                    autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error" required="required">
+                                            </div>
+                                            <div class="form-group has-success">
+                                                <label for="cc-name" class="control-label mb-1">Maximum Score(For Theory, Nomination Form and Attendance only!):</label>
+                                                <input id="cc-name" name="total_nomination_score" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter your phone"
+                                                    autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error" required="required">
+                                            </div>
+                                            <hr>
+                                            <br />
+
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                                
+                                
+                                                                
+                                
+						</div>	
+						
+						<div class="row">
+							<div class="col-lg-12 col-md-8 col-sm-6 col-xs-4">
+                                <button id="payment-button" type="submit" class="btn btn-lg btn-block btn btn-primary">
+                                   <span id="payment-button-amount" class="btn btn-primary">Submit Data</span>
+                                   <span id="payment-button-sending" style="display:none;">Processing..</span>
+                                </button>
+                            </div>
+						</div>
+				 </form>
+
+    <br />
+  	
+  	
+
+        
+       
+{% endblock content %}

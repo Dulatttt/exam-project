@@ -1,0 +1,100 @@
+{% extends 'radmin/base.html' %}
+{% load static %}
+  
+
+{% block content %}	
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">All Results</h3>
+              </div>
+              <!-- /.card-header -->
+              {% if results %}
+              <div class="card-body">
+                {% for result in results %}
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Names</th>
+                      <th>Reg Number</th>
+                      <th style="width: 40px">Exam(id)</th>
+                      <th>Score(%)</th>
+                      <th>Mark Exam</th>
+                      <th>Edit Result</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                      
+                      {% for item in result %}
+                      <tr>
+                        <td>#</td>
+                        <td>
+                            <a href="{% url 'result:result_detail' item.id item.student.id %}">
+                              {{ item.student.name }}
+                            </a>
+                        </td>
+                        <td>
+                          <div>
+                            <a href="{% url 'result:result_detail' item.id item.student.id %}">
+                              {{ item.student.reg_no }}
+                            </a>
+                          </div>
+                        </td>
+                        <td><span class="badge bg-danger">
+                          <a href="{% url 'result:result_detail' item.id item.student.id %}">
+                             {{ item.exam_type }}({{ item.exam_slug }})
+                          </a>
+                        </span></td>
+
+                        <td><span class="badge bg-danger">
+                          <a href="{% url 'result:result_detail' item.id item.student.id %}">
+                            {{ item.percentage }}%
+                          </a>
+                        </span></td>
+
+                      <td>
+                          <a href="{% url 'result:result_detail' item.id item.student.id %}">
+                            Mark
+                          </a>
+                      </td>
+
+                      <td>
+                          <a href="{% url 'result:edit_result' item.id item.student.id %}">
+                            Edit
+                          </a>
+                      </td>
+
+                      </tr>
+
+                      {% endfor %}
+                      
+
+                    
+
+
+                  </tbody>
+                </table>
+                <hr>
+                <br />
+                {% endfor %}
+              </div>
+              {% else %}
+                <div class="card-body">
+                 <p>Sorry, Nothing Yet!</p>
+                </div>
+              {% endif %}
+
+          </div>
+
+            <!-- /.card -->
+      </div>
+
+
+
+        </div>
+            
+{% endblock content %}

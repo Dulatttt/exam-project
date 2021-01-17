@@ -1,0 +1,24 @@
+
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>Reg Number:</label>
+                    <input type="password" name="reg_no" placeholder="Reg Number" required="required">
+                </div>
+                <div class="login-checkbox">
+                    <label>
+                        <input type="checkbox" name="remember">Remember Me
+                    </label>
+                    <label>
+                        <a href="#">Forgotten Password?</a>
+                    </label>
+                </div>
+                <button type="submit">Login!</button>
+                <div class="social-login-content">
+                    <div class="social-button">
+                        <a href="#" class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</a>
+                      <a href="#" class="au-btn au-btn--block au-btn--blue2">sign in with twitter</a>
+                    </div>
+                </div>
+            </form>

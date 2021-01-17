@@ -1,0 +1,38 @@
+
+        <div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card" style="border-radius: 30px;">
+                    <div class="card-header">Your Result!</div>
+                    <div class="card-body">
+                            <div class="form-group">
+                                <label for="cc-payment" class="control-label mb-1">Student:</label>
+                                <small>{{ result.student.name }}({{ result.student.reg_no }})</small>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <label for="cc-payment" class="control-label mb-1">Exam:</label><br />
+                                <small><b>Title:</b> {{ exam.title }}</small><br />
+                                <small><b>Type:</b> {{ exam.exam_type }}</small><br />
+                                <small><b>Batch:</b> {{ exam.batch }}</small><br />
+
+                            </div>
+                            <br />
+                            <div class="form-group has-success">
+                                <label for="cc-name" class="control-label mb-1">Current Score:</label>
+                                <small>{{ result.score }}/{{ result.total }}({{ result.percentage }})%</small>
+                            </div>
+                   
+                    </div>
+                </div>
+            </div>            
+		</div>	
+		
+
+
+
+
+		<div class="row">
+			<div class="col-lg-12 col-md-8 col-sm-6 col-xs-4">
+                <a href="#">Print</a>
+            </div>
+		</div>
