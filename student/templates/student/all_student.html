@@ -7,8 +7,8 @@
 
         <div class="row">
           <div class="col-md-12">
-            <div class="card">
-              <div class="card-header">
+            <div class="card" style="border-radius: 30px;">
+              <div class="card-header" style="background-color: #28a745; border-radius:30px 30px 0 0; color: #fff">
                 <h3 class="card-title">All Students</h3>
               </div>
               <!-- /.card-header -->
@@ -16,7 +16,7 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th style="width: 10px">#</th>
+                      <th style="width: 10px">S/N</th>
                       <th>Names</th>
                       <th>Reg Number</th>
                       <th style="width: 40px">Batch</th>
@@ -27,7 +27,7 @@
                     {% if students %}
                       {% for item in students %}
                       <tr>
-                        <td>#</td>
+                        <td>{{ forloop.counter }}</td>
                         <td>
                             <a href="{% url 'student:edit_student' item.id %}">
                               {{ item.name }}
@@ -40,7 +40,7 @@
                             </a>
                           </div>
                         </td>
-                        <td><span class="badge bg-danger">
+                        <td><span class="badge bg-success">
                           <a href="{% url 'student:edit_student' item.id %}">
                             {{ item.batch }}
                           </a>

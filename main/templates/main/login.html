@@ -1,26 +1,94 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Examination | Log in</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'tutor/plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="{% static 'tutor/plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'tutor/dist/css/adminlte.min.css' %}">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <h1><a href="{% static '../../index2.html' %}"><b>TUTOR </b>login</a></h1>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card" style="background-color: #009900 !important">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Login</p>
+
+{% if messages %}
+    {% for message in messages %}
+    <a href="#" class="btn btn-block btn-danger">
+          <i class="fas fa-info mr-2"></i> {{ message }}
+        </a>
+    {% endfor %}     
+{% endif %}
+<br>
+
+
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group">
-        <label>Username</label>
-        <input class="au-input au-input--full" type="text" name="username" placeholder="Username" required="required">
-    </div>
-    <div class="form-group">
-        <label>Password</label>
-        <input class="au-input au-input--full" type="password" name="password" placeholder="Password" required="required">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
     </div>
     <div class="login-checkbox">
         <label>
-            <input type="checkbox" name="remember">Remember Me
+            <input type="checkbox" name="remember"> Remember Me
         </label>
         <label>
             <a href="#">Forgotten Password?</a>
         </label>
     </div>
-    <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Sign In</button>
-    <div class="social-login-content">
-        <div class="social-button">
-            <a href="#" class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</a>
-          <a href="#" class="au-btn au-btn--block au-btn--blue2">sign in with twitter</a>
-        </div>
-    </div>
+    <button class="au-btn au-btn--block au-btn--green m-b-20 btn btn-success" type="submit">Sign In</button>
+    
 </form>
+ <div class="social-auth-links text-center mb-3">
+        <p>- OR -</p>
+        
+        
+      </div>
+      <!-- /.social-auth-links -->
+
+     
+      
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="{% static '../tutor/plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static '../titor/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static '../tutor/dist/js/adminlte.min.js' %}"></script>
+
+</body>
+</html>

@@ -13,6 +13,7 @@ urlpatterns = [
 	path("e/<str:exam_link>/<int:student_id>/<int:result_id>/nomination_form/", views.TakeExamNView, name="take_exam_n"),
 	path("e/<str:exam_link>/<int:student_id>/<int:result_id>/theory/", views.TakeExamTView, name="take_exam_t"),
 	path("e/<str:exam_link>/<int:student_id>/exam-complete/", views.ExamCompleteView, name="exam_complete"),
+	path("e/<str:exam_link>/<int:student_id>/error/", views.ErrorView, name="error"),
 
 	path("e/<str:exam_slug>/exam-complete/result-checker/", views.ResultCheckerView, name="result_checker"),
 	path("e/<str:exam_slug>/<int:student_id>/exam_complete/result-checker/complete/", views.StudentResultView, name="student_result"),

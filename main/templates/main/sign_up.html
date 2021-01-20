@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-group">
@@ -28,3 +31,4 @@
         </div>
     </div>
 </form>
+{% endblock %}

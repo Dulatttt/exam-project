@@ -16,7 +16,7 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th style="width: 10px">#</th>
+                      <th style="width: 10px">S/N</th>
                       <th>Names</th>
                       <th>Status</th>
                       <th style="width: 40px">Tenant IDs</th>
@@ -26,7 +26,7 @@
                     {% if tenants %}
                       {% for item in tenants %}
                       <tr>
-                        <td>#</td>
+                        <td>{{ forloop.counter }}</td>
                         <td>
                             <a href="{% url 'client:tenant_detail' item.tenant_id %}">
                               {{ item.full_name }}

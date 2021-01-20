@@ -1,10 +1,49 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Examination | Log in</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'tutor/plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="{% static 'tutor/plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'tutor/dist/css/adminlte.min.css' %}">
+</head>
+<body class="hold-transition login-page" background="src" style="background-image:url({% static 'main/img/header-bg.png'%}); background-size: cover;">
+<div class="login-box">
+  <div class="login-logo">
+
+    <h1 class="wow fadeIn" data-wow-duration="4s" style="color: #fff">Student Login</h1>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card" style="background:transparent; border-color: #fff; border-radius: 20px; border-style: 10px bold" >
+    <div class="card-body login-card-body" style="background-color: #fff; background: transparent; border-radius: 20px; border-style: 10px bold" >
+      <p class="login-box-msg" style="color: #fff">Login</p>
+
 
 
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
                     <label>Reg Number:</label>
-                    <input type="password" name="reg_no" placeholder="Reg Number" required="required">
+
+                    <br>
+                    <div class="input-group mb-3">
+                    <input type="password" class="form-control" name="reg_no" placeholder="Registration Number" required="required">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                         <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                    </div>
                 </div>
                 <div class="login-checkbox">
                     <label>
@@ -14,11 +53,30 @@
                         <a href="#">Forgotten Password?</a>
                     </label>
                 </div>
-                <button type="submit">Login!</button>
-                <div class="social-login-content">
-                    <div class="social-button">
-                        <a href="#" class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</a>
-                      <a href="#" class="au-btn au-btn--block au-btn--blue2">sign in with twitter</a>
-                    </div>
-                </div>
+                <button type="submit" class="btn btn-success" style="border-radius:10px 0 10px 0 ">Login!</button>
+                
             </form>
+
+    <p class="mb-1">
+        <a href="forgot-password.html" style="color: #fff">I forgot my password</a>
+      </p>
+      <p class="mb-0">
+        <a href="register.html" class="text-center" style="color: #fff">Register a new membership</a>
+      </p>
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="{% static '../tutor/plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static '../titor/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static '../tutor/dist/js/adminlte.min.js' %}"></script>
+
+</body>
+</html>
+
+

@@ -11,6 +11,7 @@ from nomination_form.models import NominationForm
 from theory.models import Theory
 from result.models import Result
 from radmin.models import RAdmin
+from django.contrib import messages
 
 # Create your views here.
 
@@ -55,10 +56,12 @@ def LoginView(request):
 				login(request, user)
 				return HttpResponseRedirect(reverse("radmin:radmin"))
 			else:
-				return HttpResponse("Incorrect Login!")
+				messages.success(request, "Incorrectly password or username")
+				return HttpResponseRedirect(reverse("main:login"))
 
 		else:
-			return HttpResponse("Incorrect Login!")
+			messages.success(request, "Incorrectly password or username")
+			return HttpResponseRedirect(reverse("main:login"))
 	else:
 		context = {}
 		return render(request, "main/login.html", context)
@@ -83,10 +86,12 @@ def ExamLoginView(request, exam_slug, exam_link):
 					login(request, user)
 					return HttpResponseRedirect(reverse("main:take_exam", args=(exam_link, student.id,)))
 				else:
-					return HttpResponse("Incorrect Login!")
+					messages.success(request, "Incorrectly ID")
+					return HttpResponseRedirect(reverse("main:error", args=(exam_link, exam_link,)))
 
 			else:
-				return HttpResponse("Incorrect Login!")
+				messages.success(request, "Incorrectly ID")
+				return HttpResponseRedirect(reverse("main:error", args=(exam_link, exam_link,)))
 
 
 
@@ -95,6 +100,7 @@ def ExamLoginView(request, exam_slug, exam_link):
 			return render(request, "main/exam_login.html", context)
 
 	else:
+		
 		return HttpResponse("Sorry, This Exam, either hasn't started or it's over! Contact your institution.")
 
 
@@ -168,8 +174,8 @@ def TakeExamView(request, exam_link, student_id):
 			return render(request, "main/take_exam.html", context)
 
 	else:
-		return HttpResponse("Sorry, You have already written this Exam!")
-
+		messages.success(request, "Sorry, You have already written this Exam!")
+		return HttpResponseRedirect(reverse("main:error", args=(exam_link, student.id,)))
 
 def TakeExamNView(request, exam_link, student_id, result_id):
 	exam = Exam.objects.get(id=exam_link)
@@ -329,7 +335,9 @@ def TimeUpSubmitView(request, exam_link, student_id):
 			result.save()
 
 		else:
-			return HttpResponse("Sorry, You have already written this Exam!")
+			messages.success(request, "Sorry, You have already written this Exam!")
+			return HttpResponseRedirect(reverse("main:error", args=(exam_link, student.id,)))
+			
 
 
 	except:
@@ -422,12 +430,21 @@ def ExamCompleteView(request, exam_link, student_id):
 	if request.method == "POST":
 		pass
 
-
 	else:
 		exam = Exam.objects.get(id=exam_link)
 
 		context = {"exam": exam}
 		return render(request, "main/exam_complete.html", context)
+
+def ErrorView(request, exam_link, student_id):
+	if request.method == "POST":
+		pass
+
+	else:
+		exam = Exam.objects.get(id=exam_link)
+
+		context = {"exam": exam}
+		return render(request, "main/error.html", context)
 
 
 
