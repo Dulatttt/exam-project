@@ -435,6 +435,7 @@ def ExamCompleteView(request, exam_link, student_id):
 
 		context = {"exam": exam}
 		return render(request, "main/exam_complete.html", context)
+		
 
 def ErrorView(request, exam_link, student_id):
 	if request.method == "POST":
