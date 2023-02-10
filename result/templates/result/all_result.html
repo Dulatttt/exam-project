@@ -8,7 +8,7 @@
           <div class="col-md-12">
             <div class="card" style="border-radius: 30px">
               <div class="card-header" style="background-color: #28a745; border-radius:30px 30px 0 0; color: #fff">
-                <h3 class="card-title">All Results</h3>
+                <h3 class="card-title">Результаты</h3>
               </div>
               <!-- /.card-header -->
               {% if results %}
@@ -17,13 +17,13 @@
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th style="width: 10px">S/N</th>
-                      <th>Names</th>
-                      <th>Reg Number</th>
-                      <th style="width: 40px">Exam(id)</th>
-                      <th>Score(%)</th>
-                      <th>Mark Exam</th>
-                      <th>Edit Result</th>
+                      <th style="width: 10px">№</th>
+                      <th>ФИО</th>
+                      <th>Регистрационный панель</th>
+                      <th style="width: 40px">Экзамен(id)</th>
+                      <th>Оценка(%)</th>
+                      <th>Отметка </th>
+                      <th>Изменить результат</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -58,13 +58,13 @@
 
                       <td>
                           <a href="{% url 'result:result_detail' item.id item.student.id %}">
-                            Mark
+                            Пройдено
                           </a>
                       </td>
 
                       <td>
                           <a href="{% url 'result:edit_result' item.id item.student.id %}">
-                            Edit
+                            Изменить
                           </a>
                       </td>
 
@@ -84,7 +84,7 @@
               </div>
               {% else %}
                 <div class="card-body">
-                 <p>Sorry, Nothing Yet!</p>
+                 <p>Извините, Ничего не найдено!</p>
                 </div>
               {% endif %}
 

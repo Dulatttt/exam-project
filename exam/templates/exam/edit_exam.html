@@ -12,10 +12,10 @@
 
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="card" style="border-radius: 30px;">
-                                    <div class="card-header" style="background-color: #28a745; border-radius:30px 30px 0 0; color: #fff">Edit Examination</div>
+                                    <div class="card-header" style="background-color: #28a745; border-radius:30px 30px 0 0; color: #fff">Редактировать Экзамен</div>
                                     <div class="card-body">
                                             <div class="form-group">
-                                                <label for="cc-payment" class="control-label mb-1">Start Exam | remember to select default status!</label>
+                                                <label for="cc-payment" class="control-label mb-1">Начать экзамен | не забудьте выбрать статус по умолчанию!</label>
                                                 {% if exam.status == False %}
                                                     <select name="status" id="select" class="form-control">
                                                         <option value="off" selected="selected">OFF</option>
@@ -31,23 +31,23 @@
 
                                             
                                             <div class="form-group">
-                                                <label for="cc-payment" class="control-label mb-1">Title</label>
+                                                <label for="cc-payment" class="control-label mb-1">Тема</label>
                                                 <input id="cc-pament" name="title" type="text" class="form-control" aria-required="true" aria-invalid="false" value="{{ exam.title }}">
                                             </div>
                                             <div class="form-group has-success">
-                                                <label for="cc-name" class="control-label mb-1">Exam Type</label>
+                                                <label for="cc-name" class="control-label mb-1">Тип экзамена</label>
                                                 <input id="cc-name" name="exam_type" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter your email"
                                                     autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error" value="{{ exam.exam_type }}">
                                                 <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
                                             </div>
                                             <div class="form-group has-success">
-                                                <label for="cc-name" class="control-label mb-1">Batch</label>
+                                                <label for="cc-name" class="control-label mb-1">Поток</label>
                                                 <input id="cc-name" name="batch" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter your phone"
                                                     autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error" value="{{ exam.batch }}">
                                                 <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
                                             </div>
                                             <div class="form-group has-success">
-                                                <label for="cc-name" class="control-label mb-1">Duration</label>
+                                                <label for="cc-name" class="control-label mb-1">Продолжительность</label>
                                                 <input id="cc-name" name="duration" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter your phone"
                                                     autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error" value="{{ exam.duration}}">
                                                 <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
@@ -69,8 +69,8 @@
 						<div class="row">
 							<div class="col-lg-12 col-md-8 col-sm-6 col-xs-4">
                                 <button id="payment-button" type="submit" class="btn btn-lg btn-block btn btn-success" style="border-radius: 30px">
-                                   <span id="payment-button-amount" class="btn btn-success" style="border-radius: 30px;">Submit Data</span>
-                                   <span id="payment-button-sending" style="display:none;">Processing..</span>
+                                   <span id="payment-button-amount" class="btn btn-success" style="border-radius: 30px;">Отправить данные</span>
+                                   <span id="payment-button-sending" style="display:none;">В процессе..</span>
                                 </button>
                             </div>
 						</div>

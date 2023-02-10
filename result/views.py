@@ -46,7 +46,7 @@ def AllResultView(request):
 
 			
 	else:
-		return HttpResponse("Not Authorised!, Please contact NigTech(www.NigTech.net)")		
+		return HttpResponse("Не авторизованы!, Свяжитесь с номером 87074440969")		
 
 
 
@@ -78,7 +78,7 @@ def ResultDetailView(request, result_id, student_id):
 			return render(request, 'result/result_detail.html', context)
 		
 	else:
-		return HttpResponse("Not Authorised!, Please contact NigTech(www.NigTech.net)")		
+		return HttpResponse("Не авторизованы!, Свяжитесь с номером 87074440969")		
 
 
 

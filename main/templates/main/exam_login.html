@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Examination | Log in</title>
+  <title>Экзамен | Войти</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -21,21 +21,21 @@
 <div class="login-box">
   <div class="login-logo">
 
-    <h1 class="wow fadeIn" data-wow-duration="4s" style="color: #fff">Student Login</h1>
+    <h1 class="wow fadeIn" data-wow-duration="4s" style="color: #fff">Авторизация учащегося</h1>
   </div>
   <!-- /.login-logo -->
   <div class="card" style="background:transparent; border-color: #fff; border-radius: 20px; border-style: 10px bold" >
     <div class="card-body login-card-body" style="background-color: #fff; background: transparent; border-radius: 20px; border-style: 10px bold" >
-      <p class="login-box-msg" style="color: #fff">Login</p>
+      <p class="login-box-msg" style="color: #fff">Логин</p>
 
 
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label style="color: #fff">Reg Number:</label>
+                    <label style="color: #fff">Регистрационный номер:</label>
                     <br>
                     <div class="input-group mb-3">
-                    <input type="password" class="form-control" name="reg_no" placeholder="Registration Number" required="required">
+                    <input type="password" class="form-control" name="reg_no" placeholder="Регистрационный номер" required="required">
                     <div class="input-group-append">
                         <div class="input-group-text">
                          <span class="fas fa-lock"></span>
@@ -46,17 +46,17 @@
                 <div class="login-checkbox">
                     <br>
                     <label>
-                        <input type="checkbox" name="remember"> Remember Me
+                        <input type="checkbox" name="remember"> Запомнить меня
                     </label>
                     
                     <label>
-                        <a href="#">Forgotten reg.no?</a>
+                        <!--<a href="#">Forgotten reg.no?</a>-->
                     </label>
                     <br>
                 </div>
                  <br>
       <br>
-                <button type="submit" class="btn btn-success" style="border-radius:10px 0 10px 0; align-items: center; justify-content: center; ">Login!</button>
+                <button type="submit" class="btn btn-success" style="border-radius:10px 0 10px 0; align-items: center; justify-content: center; ">Логин!</button>
                
                 
             </form>

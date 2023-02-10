@@ -33,7 +33,7 @@ def AddExamView(request):
 			return render(request, 'exam/add_exam.html', context)
 		
 	else:
-		return HttpResponse("Not Authorised!, Please contact NigTech(www.NigTech.net)")		
+		return HttpResponse("Не авторизованы!, Свяжитесь с номером 87074440969")		
 
 
 
@@ -61,7 +61,7 @@ def ExamDetailView(request, id):
 		
 
 	else:
-		return HttpResponse("Not Authorised!, Please contact NigTech(www.NigTech.net)")		
+		return HttpResponse("Не авторизованы!, Свяжитесь с номером 87074440969")		
 
 
 
@@ -98,7 +98,7 @@ def EditExamView(request, id):
 
 
 	else:
-		return HttpResponse("Not Authorised!, Please contact NigTech(www.NigTech.net)")		
+		return HttpResponse("Не авторизованы!, Свяжитесь с номером 87074440969")		
 
 
 
@@ -115,5 +115,5 @@ def AllExamView(request):
 		
 
 	else:
-		return HttpResponse("Not Authorised!, Please contact NigTech(www.NigTech.net)")		
+		return HttpResponse("Не авторизованы!, Свяжитесь с номером 87074440969")		
 

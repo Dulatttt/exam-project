@@ -8,22 +8,22 @@
           <div class="col-md-12">
             <div class="card" style="border-radius: 30px;">
               <div class="card-header" style="background-color: #28a745; border-radius:30px 30px 0 0; color: #fff">
-                <h3 class="card-title">Examinations</h3>
+                <h3 class="card-title">Экзамены</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th style="width: 10px">S/N</th>
-                      <th>title</th>
-                      <th>Exam(id)</th>
-                      <th>Batch</th>
-                      <th>Duration(Minutes)</th>
-                      <th>Status</th>
-                      <th>Edit</th>
-                      <th>Share Exam Link</th>
-                      <th>Share Result Link</th>
+                      <th style="width: 10px">№</th>
+                      <th>Предмет</th>
+                      <th>Экзамен(id)</th>
+                      <th>Поток</th>
+                      <th>Продолжительность(Minutes)</th>
+                      <th>Статус</th>
+                      <th>Изменить</th>
+                      <th>Ссылка на экзамен</th>
+                      <th>Ссылка на результат</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -64,18 +64,18 @@
                         </td>
                         <td>
                             <a href="{% url 'exam:edit_exam' item.id %}">
-                              Edit
+                              Изменить
                             </a>
                         </td>
                         <td>
                             <a href="{% url 'main:exam_login' item.exam_slug item.id %}">
-                             Share Exam Link
+                             Экзамен
                             </a>
                              <input type="text" value="{% url 'main:exam_login' item.exam_slug item.id %}">
                         </td>
                         <td>
                             <a href="{% url 'main:result_checker' item.exam_slug %}">
-                             Share Result Link
+                             Результат
                             </a>
                             <input type="text" value="{% url 'main:result_checker' item.exam_slug %}">
                         </td>
@@ -85,7 +85,7 @@
                     {% else %}
                       <tr>
                         <td>#</td>
-                        <td>Sorry, Nothing Yet!</td>
+                        <td>Извините, ничего не найдено!</td>
                         <td>
                           <div class="progress progress-xs">
                             

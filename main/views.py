@@ -56,11 +56,11 @@ def LoginView(request):
 				login(request, user)
 				return HttpResponseRedirect(reverse("radmin:radmin"))
 			else:
-				messages.success(request, "Incorrectly password or username")
+				messages.success(request, "Неправильный пароль или логин")
 				return HttpResponseRedirect(reverse("main:login"))
 
 		else:
-			messages.success(request, "Incorrectly password or username")
+			messages.success(request, "Неправильный пароль или логин")
 			return HttpResponseRedirect(reverse("main:login"))
 	else:
 		context = {}
@@ -101,7 +101,7 @@ def ExamLoginView(request, exam_slug, exam_link):
 
 	else:
 		
-		return HttpResponse("Sorry, This Exam, either hasn't started or it's over! Contact your institution.")
+		return HttpResponse("Извините, Этот экзамен либо еще не начался, либо уже закончился! Свяжитесь с преподавателем.")
 
 
 
@@ -174,7 +174,7 @@ def TakeExamView(request, exam_link, student_id):
 			return render(request, "main/take_exam.html", context)
 
 	else:
-		messages.success(request, "Sorry, You have already written this Exam!")
+		messages.success(request, "Извините, Вы уже прошли этот экзамен!")
 		return HttpResponseRedirect(reverse("main:error", args=(exam_link, student.id,)))
 
 def TakeExamNView(request, exam_link, student_id, result_id):
@@ -191,24 +191,24 @@ def TakeExamNView(request, exam_link, student_id, result_id):
 		
 
 		name_1 = request.POST.get("name_1")
-		name_2 = request.POST.get("name_2")
-		name_3 = request.POST.get("name_3")
+		#name_2 = request.POST.get("name_2")
+		#name_3 = request.POST.get("name_3")
 
 		phone_1 = request.POST.get("phone_1")
-		phone_2 = request.POST.get("phone_2")
-		phone_3 = request.POST.get("phone_3")
+		#phone_2 = request.POST.get("phone_2")
+		#phone_3 = request.POST.get("phone_3")
 
 		qualification_1 = request.POST.get("qualification_1")
-		qualification_2 = request.POST.get("qualification_2")
-		qualification_3 = request.POST.get("qualification_3")
+		#qualification_2 = request.POST.get("qualification_2")
+		#qualification_3 = request.POST.get("qualification_3")
 
 		residental_state_1 = request.POST.get("residental_state_1")
-		residental_state_2 = request.POST.get("residental_state_2")
-		residental_state_3 = request.POST.get("residental_state_3")
+		#residental_state_2 = request.POST.get("residental_state_2")
+		#residental_state_3 = request.POST.get("residental_state_3")
 
 		nomination_form = NominationForm.objects.create(name_one=name_1, phone_one=phone_1, qualification_one=qualification_1, residental_state_one=residental_state_1,
-			name_two=name_2, phone_two=phone_2, qualification_two=qualification_2, residental_state_two=residental_state_2,
-			name_three=name_3, phone_three=phone_3, qualification_three=qualification_3, residental_state_three=residental_state_3
+			#name_two=name_2, phone_two=phone_2, qualification_two=qualification_2, residental_state_two=residental_state_2,
+			#name_three=name_3, phone_three=phone_3, qualification_three=qualification_3, residental_state_three=residental_state_3
 			)
 		result.response_nomination_form_id = nomination_form.id
 		result.save()
@@ -335,7 +335,7 @@ def TimeUpSubmitView(request, exam_link, student_id):
 			result.save()
 
 		else:
-			messages.success(request, "Sorry, You have already written this Exam!")
+			messages.success(request, "Извините, Но вы уже прошли этот экзамен!")
 			return HttpResponseRedirect(reverse("main:error", args=(exam_link, student.id,)))
 			
 
@@ -496,7 +496,7 @@ def StudentResultView(request, exam_slug, student_id):
 
 
 		except:
-			return HttpResponse("No Result for this Exam, contact your institution!")
+			return HttpResponse("Нет результатов для этого экзамена, свяжитесь с учебным отделом!")
 
 
 

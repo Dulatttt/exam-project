@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Exam Portal- Admin Dashboard</title>
+  <title>Портал экзаменации- Панель админа</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -26,7 +26,7 @@
       </li>
       </li>
       <li class="nav-item d-none d-sm-inline-block"> 
-        <a href="{% url 'radmin:radmin' %}" class="nav-link">You're logged in as:<b> {{ request.user.username }}</b></a>
+        <a href="{% url 'radmin:radmin' %}" class="nav-link">Вы залогинились как:<b> {{ request.user.username }}</b></a>
       </li>
     </ul>
 
@@ -36,7 +36,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{% url 'radmin:radmin' %}" class="brand-link">
-      <span class="brand-text font-weight-light">Exam Portal | Admin</span>
+      <span class="brand-text font-weight-light">Экзаменационный портал</span>
     </a>
 
     <!-- Sidebar -->
@@ -57,7 +57,7 @@
             <a href="{% url 'radmin:radmin' %}" class="nav-link" style="background-color: #28a745;">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Home
+                Главная
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -67,7 +67,7 @@
             <a href="{% url 'student:add_student' %}" class="nav-link" style="background-color: #28a745;">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Add Student
+                Добавить учащегося
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -77,7 +77,7 @@
             <a href="{% url 'student:all_student' %}" class="nav-link" style="background-color: #28a745;">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                View Students
+                Посмотреть учащихся
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -87,7 +87,7 @@
             <a href="{% url 'exam:add_exam' %}" class="nav-link" style="background-color: #28a745;">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Setup Examination
+                Добавить экзамен
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -97,7 +97,7 @@
             <a href="{% url 'exam:all_exam' %}" class="nav-link" style="background-color: #28a745;">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                View Examinations
+                Посмотреть экзамены
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -107,7 +107,7 @@
             <a href="{% url 'result:all_result' %}" class="nav-link" style="background-color: #28a745;">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                View Student Results
+                Посмотреть результаты
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -118,7 +118,7 @@
             <a href="{% url 'main:userlogout' %}" class="nav-link" style="background-color: #28a745;">
               <i class="nav-icon fas fa-power-off"></i>
               <p>
-                Logout
+                Выйти
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -147,10 +147,9 @@
 
 
   <footer class="main-footer">
-    <strong>Copyright &copy; 2020 <a href="https://adminlte.io">Exam Portal</a>.</strong>
-    All rights reserved.
+    <strong> &copy; 2023 <a href="https://adminlte.io">Портал экзаменации</a></strong>
     <div class="float-right d-none d-sm-inline-block">
-      <b>Powered by NigTech</b>
+      <b>Developed by Kuandyshev</b>
     </div>
   </footer>
 </div>

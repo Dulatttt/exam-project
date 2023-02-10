@@ -41,7 +41,7 @@ def AddTheoryView(request, exam_id):
 			return render(request, 'theory/add_theory.html', context)
 		
 	else:
-		return HttpResponse("Not Authorised!, Please contact NigTech(www.NigTech.net)")		
+		return HttpResponse("Не авторизованы!, Свяжитесь с номером 87074440969")		
 
 
 def AllTheoryView(request):
@@ -55,4 +55,4 @@ def AllTheoryView(request):
 			return render(request, 'theory/all_theory.html', context)
 		
 	else:
-		return HttpResponse("Not Authorised!, Please contact NigTech(www.NigTech.net)")		
+		return HttpResponse("Не авторизованы!, Свяжитесь с номером 87074440969")		

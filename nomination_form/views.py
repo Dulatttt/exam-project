@@ -54,5 +54,5 @@ def AllNominationFormView(request):
 
 			
 	else:
-		return HttpResponse("Not Authorised!, Please contact NigTech(www.NigTech.net)")		
+		return HttpResponse("Не авторизованы!, Свяжитесь с номером 87074440969")		
 

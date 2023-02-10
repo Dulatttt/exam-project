@@ -47,7 +47,7 @@ def AddStudentView(request):
 			return render(request, 'student/add_student.html', context)
 	
 	else:
-		return HttpResponse("Not Authorised!, Please contact NigTech(www.NigTech.net)dd")		
+		return HttpResponse("Не авторизованы!, Свяжитесь с номером 87074440969")		
 
 
 
@@ -65,7 +65,7 @@ def StudentDetailView(request, id):
 			return render(request, 'student/student_detail.html', context)
 		
 	else:
-		return HttpResponse("Not Authorised!, Please contact NigTech(www.NigTech.net)")		
+		return HttpResponse("Не авторизованы!, Свяжитесь с номером 87074440969")		
 
 
 
@@ -81,7 +81,7 @@ def AllStudentView(request):
 		
 
 	else:
-		return HttpResponse("Not Authorised!, Please contact NigTech(www.NigTech.net)")		
+		return HttpResponse("Не авторизованы!, Свяжитесь с номером 87074440969")		
 
 
 
@@ -127,4 +127,4 @@ def EditStudentView(request, id):
 			return render(request, 'student/edit_student.html', context)
 	
 	else:
-		return HttpResponse("Not Authorised!, Please contact NigTech(www.NigTech.net)dd")		
+		return HttpResponse("Не авторизованы!, Свяжитесь с номером 87074440969")		

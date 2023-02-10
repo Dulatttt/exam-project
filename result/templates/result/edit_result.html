@@ -12,23 +12,23 @@
 
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="card" style="border-radius: 30px;">
-                                    <div class="card-header" style="background-color: #28a745; border-radius:30px 30px 0 0; color: #fff">Edit Result Exam</div>
+                                    <div class="card-header" style="background-color: #28a745; border-radius:30px 30px 0 0; color: #fff">Редактировать результат экзамена</div>
                                     <div class="card-body">
                                             <div class="form-group">
-                                                <label for="cc-payment" class="control-label mb-1">Student:</label>
+                                                <label for="cc-payment" class="control-label mb-1">Учащийся:</label>
                                                     <small>{{ result.student.name }}({{ result.student.reg_no }})</small>
                                             </div>
                                             <div class="form-group has-success">
-                                                <label for="cc-name" class="control-label mb-1">Current Score:</label>
+                                                <label for="cc-name" class="control-label mb-1">Набранные баллы:</label>
                                                 <small>{{ result.score }}/{{ result.total }}({{ result.percentage }})%</small>
                                             </div>
                                             <div class="form-group has-success">
-                                                <label for="cc-name" class="control-label mb-1">Give your score for this Student(For Theory, Nomination Form and Attendance only!):</label>
+                                                <label for="cc-name" class="control-label mb-1">Укажите свой балл за этого студента (только за теорию, форму номинации и посещаемость!):</label>
                                                 <input id="cc-name" name="score" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter your phone"
                                                     autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error" value="{{ result.score }}">
                                             </div>
                                             <div class="form-group has-success">
-                                                <label for="cc-name" class="control-label mb-1">Maximum Score(For Theory, Nomination Form and Attendance only!):</label>
+                                                <label for="cc-name" class="control-label mb-1">Максимальный балл (только за теорию, форму номинации и посещаемость!):</label>
                                                 <input id="cc-name" name="total" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter your phone"
                                                     autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error" value="{{ result.total }}">
                                             </div>
@@ -49,8 +49,8 @@
 						<div class="row">
 							<div class="col-lg-12 col-md-8 col-sm-6 col-xs-4">
                                 <button id="payment-button" type="submit" class="btn btn-lg btn-block btn btnsuccess" style="border-radius: 30px">
-                                   <span id="payment-button-amount" class="btn btn-success" style="border-radius: 30px">Submit Data</span>
-                                   <span id="payment-button-sending" style="display:none;">Processing..</span>
+                                   <span id="payment-button-amount" class="btn btn-success" style="border-radius: 30px">Сохранить данные</span>
+                                   <span id="payment-button-sending" style="display:none;">Отправка..</span>
                                 </button>
                             </div>
 						</div>
